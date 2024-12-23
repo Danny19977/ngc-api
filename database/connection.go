@@ -6,8 +6,8 @@ import (
 
 	// "github.com/kgermando/mspos-api/models"
 	// "github.com/kgermando/mspos-api/utils"
-	// "gorm.io/driver/postgres"
-	// "github.com/lib/pq"
+	"gorm.io/driver/postgres"
+	"github.com/lib/pq"
 	
     "gorm.io/gorm"
     // "gorm.io/gorm/logger"
