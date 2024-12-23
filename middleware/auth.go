@@ -1,16 +1,20 @@
-package middleware
+package middlewares
 
 import (
-    "log"
-    "net/http"
-    "time"
+	"github.com/gofiber/fiber/v2"
+	// "github.com/kgermando/mspos-api/utils"
 )
 
-func Logging(next http.Handler) http.Handler {
-    return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-        start := time.Now()
-        log.Printf("Started %s %s", r.Method, r.URL.Path)
-        next.ServeHTTP(w, r)
-        log.Printf("Completed in %v", time.Since(start))
-    })
+func IsAuthenticated(c *fiber.Ctx) error {
+
+	cookie := c.Cookies("token")
+
+	if _, err := utils.VerifyJwt(cookie); err != nil {
+		c.Status(fiber.StatusUnauthorized)
+		return c.JSON(fiber.Map{
+			"message": "unauthenticated",
+		})
+	}
+
+	return c.Next()
 }
