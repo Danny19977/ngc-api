@@ -1,8 +1,8 @@
 package middlewares
 
 import (
+	"github.com/Danny19977/ngc-api/utils"
 	"github.com/gofiber/fiber/v2"
-	// "github.com/kgermando/mspos-api/utils"
 )
 
 func IsAuthenticated(c *fiber.Ctx) error {
