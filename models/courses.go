@@ -6,13 +6,14 @@ import(
 
 
 
-type courses struct{
+type Courses struct{
 	gorm.Model
 
-	name string
-	level int16
-	category int32
-	price  string
-	status_courses bool
-	is_valid  bool 
+	// id int
+	Name string
+	Level int16
+	Category uint `gorm:"foreignKey:category_id" json:"category_id"`
+	Price  string
+	Status_courses bool
+	Is_valid  bool 
 }

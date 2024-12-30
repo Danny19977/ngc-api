@@ -6,10 +6,11 @@ import (
 	"gorm.io/gorm"
 )
 
-type category struct {
+type Category struct {
 	gorm.Model
 
-	name string
-	image image.Image
+	// id int
+	Name string
+	Image image.Image
 	
 }

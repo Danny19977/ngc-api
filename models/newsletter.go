@@ -2,7 +2,9 @@ package model
 
 import "gorm.io/gorm"
 
-type newslatter struct {
+type Newslatter struct {
 	gorm.Model
-	email string
+
+	Id int
+	Email string
 }

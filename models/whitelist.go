@@ -2,9 +2,9 @@ package model
 
 import "gorm.io/gorm"
 
-type whitelist struct {
+type Whitelist struct {
 	gorm.Model
-
-	user_id   int
-	course_id int
+	// id int
+	UserID   uint `gorm:"foreignKey:user_id" json:"user_id"`
+	CourseID uint `gorm:"foreignKey:course_id" json:"course_id"`
 }

@@ -6,12 +6,13 @@ import (
 	"gorm.io/gorm"
 )
 
-type blog struct {
+type Blog struct {
 	gorm.Model
 
-	title       string
-	category_id int
-	resume      string
-	content     int
-	image       image.Image
+	// id int
+	Title       string
+	Category_id int16
+	Resume      string
+	Content     int
+	Image       image.Image
 }

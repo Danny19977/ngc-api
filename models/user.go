@@ -2,19 +2,20 @@ package model
 
 import "gorm.io/gorm"
 
-type user struct {
+type User struct {
 	gorm.Model
 
-	name                string
-	postnom             string
-	prenom              string
-	tranche_age         string
-	email               string
-	telephone           string
-	bio                 string
-	role                string
-	permission          string
-	type_compte         string
-	status_compte       string
-	agree_terme_service bool
+	// id                  int
+	Name                string
+	Postnom             string
+	Prenom              string
+	Tranche_age         string
+	Email               string
+	Telephone           string
+	Bio                 string
+	Role                string
+	Permission          string
+	Type_compte         string
+	Status_compte       string
+	Agree_terme_service bool
 }

@@ -5,11 +5,11 @@ import (
 	"gorm.io/gorm"
 )
 
-type contact struct {
+type Contact struct {
 	gorm.Model
-
-	fullname string
-	email    string
-	subject  string
-	message string
+	// id int
+	Fullname string
+	Email    string
+	Subject  string
+	Message  string
 }

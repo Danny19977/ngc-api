@@ -2,10 +2,12 @@ package model
 
 import "gorm.io/gorm"
 
-type paiement struct {
+type Paiement struct {
 	gorm.Model
-	user_id          int
-	methode_paiement string
-	montant          string
-	course_id        int
+
+	// Id               int
+	UserID           uint `gorm:"foreignKey:user_id" json:"user_id"`
+	Methode_paiement string
+	Montant          string
+	CourseID         uint `gorm:"foreignKey:course_id" json:"course_id"`
 }
